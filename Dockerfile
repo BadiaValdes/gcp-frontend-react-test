@@ -8,8 +8,6 @@ COPY package.json ./
 
 RUN npm install
 
-RUN mv ./node_modules ./
-
 COPY . .
 
 RUN npm run build
