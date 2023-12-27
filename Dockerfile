@@ -1,20 +1,31 @@
-# base image
-FROM node:16.15.1-slim
+# Build
 
-# Create and change to the app directory.
-WORKDIR /usr/app
+FROM node:lts-alpine as builder
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure copying both package.json AND package-lock.json (when available).
-# Copying this first prevents re-running npm install on every code change.
-COPY . .
+COPY package.json ./
 
-# Install production dependencies.
-# If you add a package-lock.json, speed your build by switching to 'npm ci'.
 RUN npm install
+
+RUN mkdir /app-ui
+
+RUN mv ./node_modules ./app-ui
+
+COPY . .
 
 RUN npm run build
 
-CMD ["npm", "start"]
+# Deploy
 
-EXPOSE 5173
+FROM nginx:alpine
+
+# copy the .conf template
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+
+## Remove default nginx index page and replace it with the static files we created in the first step
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app-ui/build /usr/share/nginx/html
+EXPOSE 80
+
+CMD nginx -g 'daemon off;'
+
+
