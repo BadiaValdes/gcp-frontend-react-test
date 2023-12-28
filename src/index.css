@@ -54,6 +54,64 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.title{
+  color: #646cff !important;
+}
+
+.form-title{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.login-form{
+  border: 1px solid #646cff;
+  border-radius: 1rem;
+  padding:  2rem;
+}
+
+.form-field{
+  width: 90%;
+  padding: 0 1rem;
+  margin-bottom: .5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+}
+
+.form-label{
+  display: block;
+}
+
+.form-control{
+  width: 100%;
+  padding: .8rem 0.5rem;
+  border-radius: .5rem;
+  outline: transparent;
+  border: 1px solid transparent;
+}
+  .form-control:hover{  
+    border: 1px solid #646cff;
+  }
+  .form-control:focus{  
+    border: 1px solid #fff;
+  }
+
+.btn-field{
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-full{
+  width: 60% !important;
+  padding: 1rem;
+  text-align: center;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
