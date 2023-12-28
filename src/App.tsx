@@ -20,7 +20,12 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault(); 
     console.log('form values >>>', form); 
-    login(form);   
+    login(form)
+      .then(result =>{
+        const {token, user} = result; 
+        window.localStorage.setItem('login', token);
+        window.localStorage.setItem('user', user);
+      });   
     setForm({  email: '', password: '' });
   }
 
@@ -65,7 +70,7 @@ function App() {
         </form>
 
 
-        { JSON.stringify(form) }
+        {/* { JSON.stringify(form) } */}
         
       </div>
     </>
