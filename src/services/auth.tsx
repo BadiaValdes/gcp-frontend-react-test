@@ -30,7 +30,7 @@ export const login = async (data) =>{
     const result = await res.json();
     const {usuario,token} = result; 
     window.localStorage.setItem('token', token);
-    window.localStorage.setItem('user', usuario);
+    window.localStorage.setItem('user', JSON.stringify(usuario));
     return result;
   } catch (error) {
     console.error(error);  

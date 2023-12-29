@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
 
 
 export default function Login() {
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -26,7 +27,7 @@ export default function Login() {
         login(form)
         .then(result =>{
             console.log('api response >>>', result);
-            if(result?.message === 'Login correcto') navigate("home"); 
+            if(result?.message === 'Login correcto') navigate(from, { replace: true }); 
         });   
     }
 
