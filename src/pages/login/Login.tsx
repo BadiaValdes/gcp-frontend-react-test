@@ -1,15 +1,15 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
 import { useAuth} from '../../hooks/useAuth.tsx'
 import './Login.css';
+import { notify } from "../../services/notify.ts";
 
 
 export default function Login() {
-    const {signin} = useAuth();
+    const {user,signin} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -19,6 +19,13 @@ export default function Login() {
   //   email: "prueba4@gmail.com",
   //   password: "1234"
   // }
+
+    useEffect(()=>{
+      if(user && location.pathname === '/login'){
+        notify('Usted ya está logueado!');
+        navigate("..", { relative: "path" });
+      }
+    },[user])
 
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value});

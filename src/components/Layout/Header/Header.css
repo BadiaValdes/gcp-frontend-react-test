@@ -1,41 +1,80 @@
 .header{
-    background-color: #242424;
+    background-color: #1a1a1a;
+    padding: .5rem 4rem;
     border: 1px solid transparent;
     border-bottom-color: #646cff;
+    box-shadow: 0 0 20px #8e94ff;
     color: #fff;
     height: 90px;
     width: 100%;
+    padding-right: 4rem;
+
     position: fixed;
     top: 0;
     left: 0;
 
     display: flex;
     align-items: center;
+    flex-direction: row;
+}
 
+.logo{
+    padding: .5rem;
+    min-width: 10%;
+}
+
+.section-right{
+    padding: .5rem;
+    min-width: 80%;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .navigation{
-    background-color: white;
-}
-.navigation ul{
-    background-color: wheat;
+    padding: .5rem;
 
-    padding: .5rem 1rem;
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: .5rem;
 }
 
-.spacer{
-    flex: 1 1 auto;
+.navlink{
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    padding: 0.5rem .8rem;
+    border-radius: .5rem;
 }
+    .navlink:hover{
+        color: #8e94ff !important;
+    }
+    .navlink.active{
+        border-color: #646cff !important;
+        color: #646cff !important;
+    }
 
 .actions{
-    background-color: green;
-    padding: 1rem;
+    padding: .5rem;
+    margin-left: 4rem;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.cart{
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
 }
 

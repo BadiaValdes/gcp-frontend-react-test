@@ -34,7 +34,7 @@ export const AuthProvider:FC<ChildrenProp> = ({ children }) => {
         const {usuario} = result;
         setUser(usuario);
         if(result?.message === 'Login correcto') {
-          notify('login!');                
+          notify('Ha iniciado sesión!');                
           navigate(from, { replace: true })
         }
       });
@@ -45,7 +45,7 @@ export const AuthProvider:FC<ChildrenProp> = ({ children }) => {
     window.localStorage.removeItem('token');    
     window.localStorage.removeItem('user');  
     navigate('login');  
-    notify('logout!');      
+    notify('Ha cerrado sesión!');      
   };  
 
 
