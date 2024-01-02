@@ -43,7 +43,8 @@ export const AuthProvider:FC<ChildrenProp> = ({ children }) => {
   const signout = ():void => {
     setUser(null);
     window.localStorage.removeItem('token');    
-    window.localStorage.removeItem('user');    
+    window.localStorage.removeItem('user');  
+    navigate('login');  
     notify('logout!');      
   };  
 

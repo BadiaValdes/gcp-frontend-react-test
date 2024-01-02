@@ -13,14 +13,14 @@ export default function Header() {
                 <li>
                     <Link to='home'>Home</Link>
                 </li>
-                <li>
-                    <Link to='login'>Login</Link>
-                </li>
             </ul>
         </nav>
         <div className="spacer"></div>
         <div className='actions'>            
-            {user && (<button className='logout' onClick={signout}>Logout</button>)}
+            {user 
+                ? (<button className='logout' onClick={signout}>Logout</button>)
+                : (<Link to='login'>Login</Link>)
+            }
         </div>
     </header>
   )
