@@ -1,3 +1,5 @@
+/* @import "~balloon-css/src/balloon"; */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +13,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --balloon-border-radius: .5rem;
+  --balloon-color: #646cff;
+  --balloon-font-size: .8rem;
+  --balloon-move : 30px
 }
 
 a {

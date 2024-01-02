@@ -41,6 +41,23 @@
     gap: .5rem;
 }
 
+
+.btn-icon{
+    background-color: transparent !important;
+    outline: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+    .btn-icon:hover {
+        border-color: none !important;
+    }
+    .btn-icon:focus,
+    .btn-icon:focus-visible {
+        outline: none !important;
+    }
+
 .navlink{
     border: 1px solid transparent;
     transition: all 0.3s;
@@ -65,7 +82,7 @@
 }
 
 .cart{
-    margin-right: 0;
+    margin-right: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
