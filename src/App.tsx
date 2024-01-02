@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Cart from './pages/Cart/Cart.tsx';
+import Dashboard from './pages/Dashboard/Dashboard.tsx';
 
 function App() {  
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="home"  element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>

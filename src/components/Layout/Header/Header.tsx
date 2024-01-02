@@ -28,9 +28,9 @@ export default function Header() {
                 </div>
                 <div className="user">
                     {user?.roles === 'admin' && (
-                        <button className='btn-icon' aria-label="User actions" data-balloon-pos="down"> 
+                        <Link to='dashboard' aria-label="User actions" data-balloon-pos="down"> 
                             <CiUser className='icon' />
-                        </button>
+                        </Link>
                     )}
                     {user 
                         ? (<button className='btn-icon' onClick={signout} aria-label="Logout"  data-balloon-pos="down">   <CiLogout className='icon'/> </button>)
