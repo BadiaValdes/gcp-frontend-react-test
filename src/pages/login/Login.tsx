@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
+import { useAuth} from '../../hooks/useAuth.tsx'
 
 
 export default function Login() {
+    const {signin} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -17,18 +19,19 @@ export default function Login() {
   //   password: "1234"
   // }
 
-    const handleChange = (e) => {
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value});
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
         console.log('form values >>>', form); 
-        login(form)
-        .then(result =>{
-            console.log('api response >>>', result);
-            if(result?.message === 'Login correcto') navigate(from, { replace: true }); 
-        });   
+        // login(form)
+        // .then(result =>{
+        //     console.log('api response >>>', result);
+        //     if(result?.message === 'Login correcto') navigate(from, { replace: true }); 
+        // });  
+        signin(form); 
     }
 
     return (
