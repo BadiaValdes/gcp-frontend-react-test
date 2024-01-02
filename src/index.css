@@ -17,7 +17,7 @@
   --balloon-border-radius: .5rem;
   --balloon-color: #646cff;
   --balloon-font-size: .8rem;
-  --balloon-move : 30px
+  --balloon-move : 10px
 }
 
 a {
