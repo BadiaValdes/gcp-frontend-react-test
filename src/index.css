@@ -23,12 +23,15 @@ a {
   }
 
 body {
-  margin: 0;
-  /* display: flex;
-  place-items: center; */
+  margin: 0;  
   min-width: 320px;
   min-height: 100vh;
-  background-color: yellow;
+}
+
+.main{
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -56,7 +59,6 @@ button {
   }
 
 .notifications{
-  background-color: #ffffff !important;
   transform: translate(0, 50px);
 }
 
@@ -70,11 +72,7 @@ button {
   margin-top: 0;
 }
 
-.login-form{
-  border: 1px solid #646cff;
-  border-radius: 1rem;
-  padding:  2rem;
-}
+
 
 .form-field{
   width: 90%;

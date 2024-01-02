@@ -3,9 +3,11 @@ import './Header.css';
 import { useAuth } from '../../../hooks/useAuth';
 
 export default function Header() {
-    const {signout} = useAuth();
+    const {user,signout} = useAuth();
   return (
     <header className='header'>
+        <h1 className='title logo'>LOGO</h1>
+        <div className="spacer"></div>
         <nav className='navigation'>
             <ul>
                 <li>
@@ -17,8 +19,8 @@ export default function Header() {
             </ul>
         </nav>
         <div className="spacer"></div>
-        <div className='actions'>
-            <button className='logout' onClick={signout}>Logout</button>
+        <div className='actions'>            
+            {user && (<button className='logout' onClick={signout}>Logout</button>)}
         </div>
     </header>
   )

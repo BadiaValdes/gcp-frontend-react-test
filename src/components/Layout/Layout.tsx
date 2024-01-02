@@ -6,7 +6,9 @@ export default function Layout() {
   return (
     <>
       <Header/>
-      <Outlet/>
+      <section className="main">
+        <Outlet/>
+      </section>
     </>
   )
 }

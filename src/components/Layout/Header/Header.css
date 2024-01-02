@@ -15,11 +15,12 @@
 }
 
 .navigation{
-    background-color: red;
-    padding: 1rem;
-
+    background-color: white;
 }
 .navigation ul{
+    background-color: wheat;
+
+    padding: .5rem 1rem;
     list-style: none;
     display: flex;
     justify-content: center;

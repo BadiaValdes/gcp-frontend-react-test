@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
 import { useAuth} from '../../hooks/useAuth.tsx'
+import './Login.css';
 
 
 export default function Login() {
@@ -35,8 +36,7 @@ export default function Login() {
     }
 
     return (
-        <>
-        <h1 className='title'>Node + React + GCP</h1>
+        <>        
         <div className="card">
   
           <form className='login-form' onSubmit={handleSubmit}>
