@@ -4,19 +4,12 @@ import { login } from "../services/auth.ts";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LoginData } from "../models/login-data.ts";
 import { ChildrenProp } from "../models/types.ts";
+import { User } from "../models/user.ts";
 
 export interface AuthContextType {
   user: User | null;
   signin: (data:LoginData) => void;
   signout: () => void;
-}
-
-export interface User{
-  email: string;
-  nombre: string;
-  apellido: string;
-  roles: string;
-  dni: string;
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);

@@ -1,0 +1,30 @@
+.dashboard{
+    min-width: 500px;
+    padding-top: 6rem;
+    display:grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.sidebar{
+    display: flex;
+    gap: .5rem;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (width > 768px){ 
+    .sidebar{
+        flex-direction: column;
+        
+    }
+    .dashboard{
+        grid-template-columns: 1fr 3fr;
+        gap: 1rem;
+    }
+}
