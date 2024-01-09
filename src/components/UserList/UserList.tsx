@@ -28,7 +28,7 @@ export default function UserList({ users, removeUser }:Props) {
             <td scope="row" className='p-1'>{user.email}</td>
             <td scope="row" className='actions-td'>
               <button type="button" aria-label="edit user"> <EditIcon/> </button>
-              <button type="button" onClick={()=>removeUser(user._id)} aria-label="remove user"> <RemoveIcon/> </button>
+              <button type="button" onClick={()=>removeUser(user._id as string)} aria-label="remove user"> <RemoveIcon/> </button>
             </td>
           </tr> 
         ))}            
