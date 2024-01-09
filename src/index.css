@@ -123,10 +123,11 @@ button {
 }
 
 .icon{
-  font-size: 1.5rem;
   color: #646cff;
   padding: 0.5rem;
   border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
   .icon:hover{
     cursor: pointer;

@@ -1,11 +1,7 @@
 import './Header.css';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-
-import { CiShoppingCart } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
-import { CiLogin } from "react-icons/ci";
-import { CiLogout } from "react-icons/ci";
+import { CartIcon, DashboardIcon, LoginIcon, LogoutIcon} from '../../utils/Icons/Icons';
 
 export default function Header() {
     const {user,signout} = useAuth();
@@ -24,17 +20,17 @@ export default function Header() {
 
             <div className='actions'> 
                 <div className="cart">
-                <Link to='cart' aria-label="Cart" data-balloon-pos="down"> <CiShoppingCart className='icon' /> </Link>
+                    <Link to='cart' aria-label="Carrito" data-balloon-pos="down"> <CartIcon /> </Link>
                 </div>
                 <div className="user">
                     {user?.roles === 'admin' && (
-                        <Link to='dashboard' aria-label="User actions" data-balloon-pos="down"> 
-                            <CiUser className='icon' />
+                        <Link to='dashboard' aria-label="Admin dashboard" data-balloon-pos="down"> 
+                            <DashboardIcon />
                         </Link>
                     )}
                     {user 
-                        ? (<button className='btn-icon' onClick={signout} aria-label="Logout"  data-balloon-pos="down">   <CiLogout className='icon'/> </button>)
-                        : location.pathname !== '/login' && (<Link to='login' aria-label="Login" data-balloon-pos="down"> <CiLogin className='icon'/> </Link>)
+                        ? (<button className='btn-icon' onClick={signout} aria-label="Cerrar sesión"  data-balloon-pos="down">   <LogoutIcon /> </button>)
+                        : location.pathname !== '/login' && (<Link to='login' aria-label="Iniciar sesión" data-balloon-pos="down"> <LoginIcon /> </Link>)
                     }
                 </div>  
                         
