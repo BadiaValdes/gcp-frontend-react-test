@@ -1,6 +1,7 @@
 import axios from "axios";
 import { apiUrl } from "../utils/constants";
 import { User } from "../models/user";
+import { notify } from "./notify";
 
 export const  getUsers = async (token:string)=> {
       try {
@@ -14,6 +15,7 @@ export const  getUsers = async (token:string)=> {
 export const createUser = async (user: User,token:string)=> {
       try {
             const {data} = await axios.post(`${apiUrl}/users`, user, { headers: { 'Authorization': `Bearer ${token}`}});
+            notify(`Usuario: ${user.nombre} creado`);
             return data;
       } catch (error) {
             console.error(error);

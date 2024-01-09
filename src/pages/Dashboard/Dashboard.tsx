@@ -3,6 +3,7 @@ import { useState } from "react"
 import { User, UserRole } from "../../models/user";
 import { getUsers, createUser } from "../../services/users";
 import UserList from '../../components/UserList/UserList';
+import { notify } from '../../services/notify';
 
 export default function Dashboard() {
   const [users, setUsers] = useState<User[]>([]);
@@ -20,10 +21,10 @@ export default function Dashboard() {
   const addUser = async () =>{
     if (token) { 
       const newUser = {
-        nombre: "jaila",
-        apellido: "barreto",
+        nombre: "jairo",
+        apellido: "rivero",
         dni: "123456",
-        email: "jaila@gmail.com",
+        email: "jairo@gmail.com",
         password: "0205",
         roles: UserRole.User
       } 
@@ -36,6 +37,7 @@ export default function Dashboard() {
   const removeUser = (userId:string)=>{  
     const filteredUsers = users.filter((user:User) => user._id !== userId);
     setUsers(filteredUsers);
+    notify(`Usuario eliminado`);
   }
 
   return (

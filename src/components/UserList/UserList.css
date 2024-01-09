@@ -12,7 +12,8 @@
 }
 
 .th{
-    background-color: #242424;
+    /* background-color: #0d0f30; */
+    background-color: #1a1a1a;
     border: 1px solid #514d4d;
     text-transform: uppercase !important;
     font-size: .8rem;
