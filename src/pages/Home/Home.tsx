@@ -7,6 +7,7 @@ export default function Home() {
   useEffect(()=>{
     fetch("https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app/users").then(data => data.json).then(json => {
       console.log(json)
+      setUser('Termino el fetch');
     })
   },[])
 
