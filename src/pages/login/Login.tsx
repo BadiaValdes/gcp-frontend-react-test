@@ -1,10 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { login } from "../../services/auth";
 import { useAuth} from '../../hooks/useAuth.tsx'
 import './Login.css';
 import { notify } from "../../services/notify.ts";
-
 
 export default function Login() {
     const {user,signin} = useAuth();
@@ -14,11 +12,6 @@ export default function Login() {
         email: '',
         password: '',
     });
-
-  // const user = {
-  //   email: "prueba4@gmail.com",
-  //   password: "1234"
-  // }
 
     useEffect(()=>{
       if(user && location.pathname === '/login'){
@@ -33,12 +26,6 @@ export default function Login() {
 
     const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
-        console.log('form values >>>', form); 
-        // login(form)
-        // .then(result =>{
-        //     console.log('api response >>>', result);
-        //     if(result?.message === 'Login correcto') navigate(from, { replace: true }); 
-        // });  
         signin(form); 
     }
 
@@ -79,11 +66,7 @@ export default function Login() {
             <div className="btn-field">
               <button type='submit' className='btn-full'>Sigin</button>
             </div>
-          </form>
-  
-  
-          {/* { JSON.stringify(form) } */}
-          
+          </form>          
         </div>
       </>
     )

@@ -1,22 +1,15 @@
 
+import axios from "axios";
 import { apiUrl } from "../utils/constants";
+import { LoginData } from "../models/login-data";
 
-export const login = async (data) =>{
+export const login = async (userData:LoginData) =>{
   try {
-    const res = await fetch(`${apiUrl}/login`, 
-      {
-        method: 'POST',
-        body: JSON.stringify(data), 
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-    );
-    const result = await res.json();
-    const {usuario,token} = result; 
+    const {data} = await axios.post(`${apiUrl}/login`, userData );    
+    const {usuario,token} = data; 
     window.localStorage.setItem('token', token);
     window.localStorage.setItem('user', JSON.stringify(usuario));
-    return result;
+    return data;
   } catch (error) {
     console.error(error);  
   }  
