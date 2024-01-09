@@ -8,17 +8,23 @@ export default function Home() {
 
   useEffect(() => {
     const authFetch = async () => {
-       const auth = new GoogleAuth();
+      const auth = new GoogleAuth();
       const authF = await auth.getIdTokenClient(
         "https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app"
       );
       const authHeader = await authF.getRequestHeaders();
 
-      await fetch("https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app", {
-        headers: new Headers({
-          Authorization: authHeader["Authorization"],
-        }),
-      })
+      const serviceRequestOptions = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authHeader["Authorization"]
+        },
+        timeout: 3000,
+      };
+    
+
+      await fetch("https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app", serviceRequestOptions)
         .then((data) => data.json())
         .then((json) => {
           console.log(json);
