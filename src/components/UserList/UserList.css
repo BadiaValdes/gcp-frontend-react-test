@@ -1,0 +1,37 @@
+.table{
+    width: 100%;
+
+}
+
+.color:nth-child(odd){
+    background-color: #333 !important;
+}
+
+.color:nth-child(even){
+    background-color: #555 !important;
+}
+
+.th{
+    background-color: #242424;
+    border: 1px solid #514d4d;
+    text-transform: uppercase !important;
+    font-size: .8rem;
+}
+
+.th-left-corner{
+    border-top-left-radius: .5rem ;
+}
+
+.th-right-corner{
+    border-top-right-radius: .5rem ;
+}
+
+.p-1{
+    padding: .5rem;
+}
+
+.actions-td button{
+    padding: 0.5rem;
+    background-color: transparent !important;
+    border: none !important;
+}

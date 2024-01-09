@@ -2,15 +2,18 @@ import './Dashboard.css';
 import { useState } from "react"
 import { User, UserRole } from "../../models/user";
 import { getUsers, createUser } from "../../services/users";
+import UserList from '../../components/UserList/UserList';
 
 export default function Dashboard() {
   const [users, setUsers] = useState<User[]>([]);
+  const [showUsers, setShowUsers] = useState<boolean>(false);
   const token = localStorage.getItem('token');
 
   const listUsers = async () =>{
     if (token) {      
       const result = await getUsers(token);
       setUsers(result);
+      setShowUsers(true)
     }
   }
 
@@ -30,6 +33,11 @@ export default function Dashboard() {
     }
   }
 
+  const removeUser = (userId:string)=>{  
+    const filteredUsers = users.filter((user:User) => user._id !== userId);
+    setUsers(filteredUsers);
+  }
+
   return (
     <div className="dashboard">
       
@@ -38,10 +46,8 @@ export default function Dashboard() {
         <button type="button" onClick={addUser}> Crear usuario</button>        
       </section>
 
-      <aside className='content'>
-        <ul>
-          {users.length > 0 && users.map(user => (<li key={user._id}> {user.nombre} </li>))}
-        </ul>
+      <aside className='content'>       
+        { showUsers && <UserList users={users} removeUser={removeUser}/> }    
       </aside>
     </div>
   )

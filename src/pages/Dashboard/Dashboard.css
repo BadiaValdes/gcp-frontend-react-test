@@ -1,9 +1,9 @@
 .dashboard{
     min-width: 500px;
     padding-top: 6rem;
-    display:grid;
-    place-items: center;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -19,12 +19,13 @@
 }
 
 @media (width > 768px){ 
+    .dashboard{
+        min-width: 100%;
+        justify-content: center;
+        flex-direction: row;
+    }
     .sidebar{
         flex-direction: column;
-        
-    }
-    .dashboard{
-        grid-template-columns: 1fr 3fr;
-        gap: 1rem;
+        align-self: start;
     }
 }
