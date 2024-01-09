@@ -7,8 +7,6 @@ export default function Home() {
 
   const auth = new GoogleAuth();
 
-  const clientId = '107158590866213564417';
-
   useEffect(()=>{
     const authFetch = async () => {
       const authF = await auth.getIdTokenClient('https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app')
