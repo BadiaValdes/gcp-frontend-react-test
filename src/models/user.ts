@@ -1,5 +1,5 @@
 export interface User{
-    _id: string,
+    _id?: string,
     email: string;
     nombre: string;
     apellido: string;
@@ -11,3 +11,4 @@ export enum UserRole {
     Admin = "admin",
     User = "user",
 }
+
