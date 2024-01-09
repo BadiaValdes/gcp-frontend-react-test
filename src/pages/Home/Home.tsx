@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GoogleAuth } from "google-auth-library";
 
 export default function Home() {
   const [user, setUser] = useState<string>("Aqui va el nombre");
@@ -7,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     const authFetch = async () => {
-      // const auth = new GoogleAuth();
+      const auth = new GoogleAuth();
       // const authF = await auth.getIdTokenClient(
       //   "https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app"
       // );
