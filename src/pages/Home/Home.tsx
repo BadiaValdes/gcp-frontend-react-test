@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { GoogleAuth } from "google-auth-library";
 
 export default function Home() {
   const [user, setUser] = useState<string>("Aqui va el nombre");
