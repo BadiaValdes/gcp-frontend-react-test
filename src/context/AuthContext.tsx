@@ -23,7 +23,6 @@ export const AuthProvider:FC<ChildrenProp> = ({ children }) => {
   const signin = (data:LoginData):void => {    
     login(data)
       .then(result =>{
-        console.log('api response >>>', result);
         const {usuario} = result;
         setUser(usuario);
         if(result?.message === 'Login correcto') {

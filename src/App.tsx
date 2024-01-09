@@ -1,6 +1,5 @@
 import './App.css'
-import { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { AuthProvider} from './context/AuthContext.tsx';
 import Layout from './components/Layout/Layout';
 import Login from './pages/login/Login';
@@ -12,11 +11,6 @@ import Cart from './pages/Cart/Cart.tsx';
 import Dashboard from './pages/Dashboard/Dashboard.tsx';
 
 function App() {  
-  const location = useLocation();
-
-  useEffect(()=>{
-    console.log('location >>> ', location);    
-  },[location])
   
   return (   
     <>
