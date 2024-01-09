@@ -18,7 +18,7 @@ export default function Home() {
 
       await fetch("https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app", {
         headers: new Headers({
-          'Authorization': authHeader
+          'Authorization': authHeader['Authorization']
         })
       }).then(data => data.json()).then(json => {
         console.log(json)
