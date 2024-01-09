@@ -1,55 +1,54 @@
 import './Dashboard.css';
-import { useState } from "react"
-import { User, UserRole } from "../../models/user";
+import { UserRole } from "../../models/user";
 import { getUsers, createUser } from "../../services/users";
-import UserList from '../../components/UserList/UserList';
 import { notify } from '../../services/notify';
+import UserList from '../../components/UserList/UserList';
+import useUsers from '../../hooks/useUsers';
 
 export default function Dashboard() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [showUsers, setShowUsers] = useState<boolean>(false);
+  const {users, listUsers, addUser, removeUser, totalUsers} = useUsers();
   const token = localStorage.getItem('token');
+  const usersQty = totalUsers();
 
-  const listUsers = async () =>{
+  const handleListUsers = async () =>{
     if (token) {      
       const result = await getUsers(token);
-      setUsers(result);
-      setShowUsers(true)
+      listUsers(result);
     }
   }
 
-  const addUser = async () =>{
+  const handleAddUser = async () =>{
     if (token) { 
       const newUser = {
-        nombre: "jairo",
-        apellido: "rivero",
+        nombre: "humbe",
+        apellido: "valle",
         dni: "123456",
-        email: "jairo@gmail.com",
-        password: "0205",
+        email: "humbe@gmail.com",
+        password: "humbe",
         roles: UserRole.User
       } 
 
-      const result = await createUser(newUser,token);
-      setUsers([...users, result]);
+      const {message} = await createUser(newUser,token);
+      console.log(message);      
+      addUser(newUser);
     }
   }
 
-  const removeUser = (userId:string)=>{  
-    const filteredUsers = users.filter((user:User) => user._id !== userId);
-    setUsers(filteredUsers);
+  const handleRemoveUser = (userId:string)=>{  
+    removeUser(userId);
     notify(`Usuario eliminado`);
   }
 
   return (
-    <div className="dashboard">
-      
+    <div className="dashboard">      
       <section className="sidebar">
-        <button type="button" onClick={listUsers}> Listar usuarios</button>
-        <button type="button" onClick={addUser}> Crear usuario</button>        
+        <button type="button" onClick={handleListUsers}> Listar usuarios</button>
+        <button type="button" onClick={handleAddUser}> Crear usuario</button>  
+        { usersQty > 0 && (<label>Total de usuarios: {usersQty} </label>) }      
       </section>
 
       <aside className='content'>       
-        { showUsers && <UserList users={users} removeUser={removeUser}/> }    
+        { usersQty > 0 && <UserList users={users} removeUser={handleRemoveUser}/> }    
       </aside>
     </div>
   )
