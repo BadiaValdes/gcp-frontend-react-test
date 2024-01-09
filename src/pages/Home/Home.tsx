@@ -9,9 +9,9 @@ export default function Home() {
   useEffect(() => {
     const authFetch = async () => {
       const auth = new GoogleAuth();
-      // const authF = await auth.getIdTokenClient(
-      //   "https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app"
-      // );
+      await auth.getIdTokenClient(
+        "https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app"
+      );
       // const authHeader = await authF.getRequestHeaders();
 
       const serviceRequestOptions = {
