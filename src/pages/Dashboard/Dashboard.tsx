@@ -4,6 +4,7 @@ import UserList from '../../components/UserList/UserList';
 import useUsers from '../../hooks/useUsers';
 import { useState } from 'react';
 import EditUser from '../../components/EditUser/EditUser';
+import {Modal} from '../../components/Modal/Modal';
 
 export default function Dashboard() {
   const {users, listUsers, removeUser, totalUsers} = useUsers();
@@ -26,6 +27,10 @@ export default function Dashboard() {
     }
   }
 
+  const closeModal =()=>{
+    setShowModal(false);
+  }
+
   return (
     <div className="dashboard">      
       <section className="sidebar">
@@ -36,7 +41,9 @@ export default function Dashboard() {
 
       <aside className='content'>       
         { usersQty > 0 && <UserList users={users} removeUser={handleRemoveUser}/> }
-        { showModal && <EditUser/>}
+        <Modal isOpen={showModal} onClose={closeModal}>
+          <EditUser/>
+        </Modal>
       </aside>
     </div>
   )

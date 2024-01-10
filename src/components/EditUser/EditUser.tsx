@@ -53,13 +53,13 @@ export default function EditUser() {
     }
 
   return (
-    <>        
+    <>
         <form className='login-form' onSubmit={handleSubmit} ref={formRef}>
             <h2 className='title form-title'> Usuario </h2>
 
             <div className="form-field">
-              <label htmlFor="nombre" className="form-label">Nombre</label>
-              <input
+            <label htmlFor="nombre" className="form-label">Nombre</label>
+            <input
                 type="text"
                 className="form-control"
                 name="nombre"
@@ -67,13 +67,13 @@ export default function EditUser() {
                 placeholder="Insert su nombre"
                 aria-describedby="nombre"
                 onChange={handleChange}
-              />
-              <small id="_firstName" className="" hidden>Help text</small>
+            />
+            <small id="_firstName" className="" hidden>Help text</small>
             </div>
 
             <div className="form-field">
-              <label htmlFor="apellido" className="form-label">Apellido</label>
-              <input
+            <label htmlFor="apellido" className="form-label">Apellido</label>
+            <input
                 type="text"
                 className="form-control"
                 name="apellido"
@@ -81,13 +81,13 @@ export default function EditUser() {
                 placeholder="Inserte su apellido"
                 aria-describedby="apellido"
                 onChange={handleChange}
-              />
-              <small id="_lastName" className="" hidden>Help text</small>
+            />
+            <small id="_lastName" className="" hidden>Help text</small>
             </div>
-  
+
             <div className="form-field">
-              <label htmlFor="email" className="form-label">Correo</label>
-              <input
+            <label htmlFor="email" className="form-label">Correo</label>
+            <input
                 type="email"
                 className="form-control"
                 name="email"
@@ -95,13 +95,13 @@ export default function EditUser() {
                 aria-describedby="email"
                 placeholder="Inserte su email"
                 onChange={handleChange}
-              />
-              <small id="_email" className="" hidden>Help text</small>
+            />
+            <small id="_email" className="" hidden>Help text</small>
             </div>
 
             <div className="form-field">
-              <label htmlFor="password" className="form-label">Contraseña</label>
-              <input
+            <label htmlFor="password" className="form-label">Contraseña</label>
+            <input
                 type="text"
                 className="form-control"
                 name="password"
@@ -109,13 +109,13 @@ export default function EditUser() {
                 aria-describedby="password"
                 placeholder="Inserte su password"
                 onChange={handleChange}
-              />
-              <small id="_password" className="" hidden>Help text</small>
+            />
+            <small id="_password" className="" hidden>Help text</small>
             </div>
 
             <div className="form-field">
-              <label htmlFor="dni" className="form-label">DNI</label>
-              <input
+            <label htmlFor="dni" className="form-label">DNI</label>
+            <input
                 type="number"
                 className="form-control"
                 name="dni"
@@ -123,8 +123,8 @@ export default function EditUser() {
                 aria-describedby="dni"
                 placeholder="Inserte su DNI"
                 onChange={handleChange}
-              />
-              <small id="_dni" className="" hidden>Help text</small>
+            />
+            <small id="_dni" className="" hidden>Help text</small>
             </div>
 
             <div className="form-field">
@@ -140,11 +140,11 @@ export default function EditUser() {
                     <option value={UserRole.Admin}> Admin</option>
                     <option value={UserRole.User}>  User</option>                    
                 </select>
-              <small id="_roles" className="" hidden>Help text</small>
+            <small id="_roles" className="" hidden>Help text</small>
             </div>
-  
+
             <div className="btn-field">
-              <button type='submit' className='btn-full'>Aceptar</button>
+            <button type='submit' className='btn-full'>Aceptar</button>
             </div>
         </form>
     </>
