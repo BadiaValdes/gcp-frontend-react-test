@@ -1,7 +1,6 @@
 import './Dashboard.css';
 import { UserRole } from "../../models/user";
-import { getUsers, createUser } from "../../services/users";
-import { notify } from '../../services/notify';
+import { getUsers, createUser, deleteUser } from "../../services/users";
 import UserList from '../../components/UserList/UserList';
 import useUsers from '../../hooks/useUsers';
 
@@ -34,9 +33,12 @@ export default function Dashboard() {
     }
   }
 
-  const handleRemoveUser = (userId:string)=>{  
-    removeUser(userId);
-    notify(`Usuario eliminado`);
+  const handleRemoveUser = async (userId:string)=>{ 
+    if (token) {  
+      const {message} = await deleteUser(userId, token);
+      console.log(message);      
+      removeUser(userId);
+    }
   }
 
   return (

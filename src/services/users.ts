@@ -23,3 +23,13 @@ export const createUser = async (user: User,token:string)=> {
             notify(`Error al crear usuario`);
       }
 }
+export const deleteUser = async (id: string,token:string)=> {
+      try {
+            const {data} = await axios.delete(`${apiUrl}/users/${id}`, { headers: { 'Authorization': `Bearer ${token}`}});
+            notify(data.message);
+            return data;
+      } catch (error) {
+            console.error(error);
+            notify(`Error al eliminar usuario`);
+      }
+}
