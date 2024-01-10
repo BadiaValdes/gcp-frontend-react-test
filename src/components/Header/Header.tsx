@@ -6,7 +6,7 @@ import { CartIcon, DashboardIcon, LoginIcon, LogoutIcon} from '../../utils/Icons
 export default function Header() {
     const {user,signout} = useAuth();
     const location = useLocation();
-    const NavClassName = ({isActive})=> ['navlink', isActive ? 'active' : ''].join(' ');
+    const NavClassName = ({isActive} : any)=> ['navlink', isActive ? 'active' : ''].join(' ');
 
   return (
     <header className='header'>
