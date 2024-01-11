@@ -62,6 +62,7 @@ button {
   button:focus-visible {
     outline: 1px solid #646cff;
   }
+  
 
 .notifications{
   transform: translate(0, 243px);
@@ -77,6 +78,13 @@ button {
   margin-top: 0;
 }
 
+.form-section{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+}
 .form-field{
   width: 90%;
   padding: 0 1rem;
@@ -134,6 +142,10 @@ button {
     color: #8e94ff;
     box-shadow: 0 0 15px #8e94ff;
   }
+
+.pointer{
+  cursor: pointer;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

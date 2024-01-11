@@ -4,7 +4,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #cac6c67d;
+    background-color: rgba(36,36,36,.2);
+    backdrop-filter: blur(.1rem);
    
     display: grid;
     place-items: center;
@@ -12,30 +13,36 @@
   
   .modal {
     position: relative;
-    background-color: #fff;
-    width: 80vw;
+    /* background-color: #fff; */
+    background-color: #232222;
     height: auto;
-    padding: 2.5rem;
+    padding: 3rem 2.5rem;
     border-radius: .5rem;
-
-    display: grid;
-    place-items: center;
+    overflow: hidden;
   }
-  
-  .close-button {
-    position: absolute;
 
-    background: none;
-    border: none;
-    cursor: pointer;
+  .close-button {
     position: absolute;
     top: .5rem;
     right: .5rem;
-    font-size: .8rem;
+
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  .modal-title{
+    position: absolute;
+    top: 0;
+    left: 1rem;
+
+    width: 100%;
+    text-align: center;
   }
   
   .modal-content {
-    color: #000;
+    margin-top: .5rem;
     display: grid;
     place-items: center;
   }

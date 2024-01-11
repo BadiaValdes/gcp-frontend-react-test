@@ -1,0 +1,8 @@
+.edit-form{
+    min-width: 320px;
+    padding:  2rem 3rem 2.5rem 2rem;
+    border-radius: 1rem;
+
+    background: rgb(100,108,255);
+    background: linear-gradient(0deg, rgba(100,108,255,.2) 10%, rgba(36,36,36,.2) 63%);
+}

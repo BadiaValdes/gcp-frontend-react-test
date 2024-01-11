@@ -1,10 +1,10 @@
 import './Dashboard.css';
-import { getUsers, deleteUser } from "../../services/users";
-import UserList from '../../components/UserList/UserList';
-import useUsers from '../../hooks/useUsers';
 import { useState } from 'react';
+import { getUsers, deleteUser } from "../../services/users";
+import { Modal } from '../../components/Modal/Modal';
+import useUsers from '../../hooks/useUsers';
+import UserList from '../../components/UserList/UserList';
 import EditUser from '../../components/EditUser/EditUser';
-import {Modal} from '../../components/Modal/Modal';
 
 export default function Dashboard() {
   const {users, listUsers, removeUser, totalUsers} = useUsers();
@@ -41,7 +41,11 @@ export default function Dashboard() {
 
       <aside className='content'>       
         { usersQty > 0 && <UserList users={users} removeUser={handleRemoveUser}/> }
-        <Modal isOpen={showModal} onClose={closeModal}>
+        <Modal 
+          title="Crer usuario" 
+          background="#242424"
+          isOpen={showModal} 
+          onClose={closeModal}>
           <EditUser/>
         </Modal>
       </aside>
