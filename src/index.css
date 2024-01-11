@@ -54,6 +54,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+  button:disabled {
+    background-color: rgb(211, 210, 210);
+    color: gray;
+    cursor: not-allowed;
+  }
   button:hover {
     border-color: #646cff;
     color: #8e94ff;;
@@ -94,7 +99,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-
 }
 
 .form-label{
@@ -146,6 +150,19 @@ button {
 .pointer{
   cursor: pointer;
 }
+
+.alert{
+  margin-top: 0.2rem;
+  width: 100%;
+  padding: .5rem;
+  border-radius: .5rem;
+  font-size: .7rem;
+}
+  .alert.danger{
+      color: white;
+      background-color: rgba(204, 110, 110, 0.307);
+  }
+
 
 @media (prefers-color-scheme: light) {
   :root {
