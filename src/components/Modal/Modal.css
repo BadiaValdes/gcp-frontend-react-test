@@ -13,8 +13,11 @@
   
   .modal {
     position: relative;
-    /* background-color: #fff; */
-    background-color: #232222;
+
+    /* background-color: #232222; */
+    background: rgb(100,108,255);
+    background: linear-gradient(0deg, rgba(100,108,255,.2) 10%, rgba(36,36,36,1) 80%);
+
     height: auto;
     padding: 3rem 2.5rem;
     border-radius: .5rem;
