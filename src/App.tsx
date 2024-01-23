@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   const [data, setData] = useState({
-    name: '',
+    name: 's',
     last: '',
   });
 
