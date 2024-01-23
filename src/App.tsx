@@ -10,7 +10,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("http://gcp-backend-express-test-22vikqc2mq-uc.a.run.app").then(dat => dat.json()).then(d =>  {
+    fetch("https://gcp-backend-express-test-22vikqc2mq-uc.a.run.app").then(dat => dat.json()).then(d =>  {
       console.log(d);
       setData(d)
     })
